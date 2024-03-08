@@ -4,19 +4,19 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 
-  pinMode(3,INPUT);
-  pinMode(4,INPUT);
-  pinMode(5,INPUT);
-  pinMode(6,INPUT);
-  pinMode(7,INPUT);
-  pinMode(8,INPUT);
-  pinMode(9,INPUT);
-  pinMode(10,INPUT); //infrared
+  pinMode(3,INPUT);  // declarate infrared
+  pinMode(4,INPUT);  // declarate infrared
+  pinMode(5,INPUT);  // declarate infrared
+  pinMode(6,INPUT);  // declarate infrared
+  pinMode(7,INPUT);  // declarate infrared
+  pinMode(8,INPUT);  // declarate infrared
+  pinMode(9,INPUT);  // declarate infrared
+  pinMode(10,INPUT); // declarate infrared
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  b = digitalRead(3);
+  b = digitalRead(3); //infrared has digital output
   c = digitalRead(4);
   d = digitalRead(5);
   e = digitalRead(6);
@@ -26,17 +26,17 @@ void loop() {
   i = digitalRead(10);
 
     if(b==0){
-      Serial.print("bt0.val=");
-      Serial.print("1");
-      Serial.write(0xff);
-      Serial.write(0xff);
-      Serial.write(0xff);
-      Serial.print("t0.txt=\"");
-      Serial.print("Penuh");
-      Serial.print("\"");
-      Serial.write(0xff);
-      Serial.write(0xff);
-      Serial.write(0xff);
+      Serial.print("bt0.val="); //button 0
+      Serial.print("1"); //value button 0
+      Serial.write(0xff);  //
+      Serial.write(0xff);  //
+      Serial.write(0xff);  // must put
+      Serial.print("t0.txt=\""); //text 0
+      Serial.print("Penuh"); //Change text 0 with "Penuh"
+      Serial.print("\""); //Close string
+      Serial.write(0xff); //
+      Serial.write(0xff); //
+      Serial.write(0xff); //must put
       
     }
     else{
